@@ -20,27 +20,35 @@ export class PersonManage implements IPerson {
             let tr : string = "";
             this.lsv.forEach(item=>{
                 tr += "<tr><td>" + item.username + "</td>";
+                tr += "<td>" + item.name + "</td>";
                 tr += "<td>" + item.family + "</td>";
+                tr += "<td>" + item.post + "</td>";
                 tr += "<td><button onclick="+"post('edit') class='btn py-0 px-1 btn-warning' data-bs-target='#personModal' data-bs-toggle='modal'>"+ "ویرایش" +"</button>"
                 +"<button onclick="+"info("+item.username+") class='btn py-0 px-1 btn-info' data-bs-target='#personInfo' data-bs-toggle='modal'>"+ "نمایش" +"</button>"
                 +"<button onclick="+"deletePerson("+item.username+") class='btn py-0 px-1 btn-danger'>"+ "حذف" +"</button>"
                 +"</td></tr>";
             });
+            (document.getElementById(".tbody")as any).innerHTML = tr;
          }
 
          else{
             (document.getElementById(".tbody")as any).innerHTML = "";
          }
     }
-
     findPerson(id: number) {
         
     }
-
-    edit(modal: any) {
-        
+    edit(modal: any): void {
     }
-
-
-
 }
+// <tr>
+//                                             <td>minashayan</td>
+//                                             <td>مینا</td> 
+//                                             <td>شایان</td>
+//                                             <td>افزودن مطالب جدید</td>
+//                                             <td>
+//                                                 <button onclick="post('edit')" class="btn py-0 px-1 btn btn-primary" data-bs-target="personModal" data-bs-toggle="modal" class="btn py-0 px-0 btn-success">ویرایش</button>
+//                                                 <button class="btn py-0 px-1 btn-info" data-bs-target="personModal" data-bs-toggle="modal" class="btn py-0 px-0 btn-info">نمایش</button>
+//                                                 <button class="btn py-0 px-1 btn-danger">حذف</button>
+//                                             </td>
+//                                         </tr>
