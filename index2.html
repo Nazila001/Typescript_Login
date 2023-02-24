@@ -23,16 +23,20 @@
                 <div class="modal-body">
                     <form>
                         <div class="row">
-                            <div class="mb-2 col-4">
+                            <div class="mb-3 col-6">
+                                <label for="username" class="form-lable">نام کاربری</label>
+                                <input type="text" class="form-coltrol" id="username" placeholder="نام کاربری">
+                            </div>
+                            <div class="mb-3 col-6">
                                 <label for="name" class="form-lable">نام</label>
                                 <input type="text" class="form-coltrol" id="name" placeholder="نام">
                             </div>
-                            <div class="mb-2 col-4">
+                            <div class="mb-3 col-6">
                                 <label for="family" class="form-lable">نام خانوادگی</label>
                                 <input type="text" class="form-coltrol" id="family" placeholder="نام خانوادگی ">
                             </div>
-                            <div class="mb-2 col-4">
-                                <label for="name" class="form-lable">پست</label>
+                            <div class="mb-3 col-6">
+                                <label for="passage" class="form-lable">پست</label>
                                 <input type="text" class="form-coltrol" id="passage" placeholder="پیام">
                             </div>
                         </div>
@@ -46,15 +50,17 @@
         </div>
     </div>
 
-    <div class="modal-fade" id="personInfo" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+    <div class="modal fade" id="personInfo" tabindex="-1" aria-hidden="true">  <!-- this mdal for showing information -->
+        <div class="modal-dialog modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header row g-0">
                     <h5 class="modal-title col-11" id="personLblInfo">اطلاعات شخصی</h5>
-                    <button type="button" class="btn-close col-1" data-bs-dismis="-1"></button>
+                    <button type="button" class="btn-close col-1" data-bs-dismis="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row g-0 info">
+                        <label class="col-4">نام کاربری</label>
+                        <label class="col-4" id="infoUsername">minashayan</label>
                         <label class="col-4">نام</label>
                         <label class="col-4" id="infoName">مینا</label>
                         <label class="col-4">نام خانوادگی</label>
@@ -73,41 +79,47 @@
 
     <div class="container box px-5">
         <div class="row">
-            <div class="cil-12">
+            <div class="col-12">
                 <h2>نمایش پست‌ها</h2>
                 <hr>
                 <div class="person-box">
-                    <div class="action mb-3"></div>
-                </div>
-                <div class="table-box table-responsive">
-                    <button onclick="addAll()" class="ntn py-0 px-1 btn btn-dark">نمایش همه</button>
-                    <button onclick="post('add')" type="button" data-bs-target="#personModal" data-bs-toggle="modal" class="btn py-0 px-0 btn btn-secondary">افزودن</button>
-                    <button onclick="update()"class="ntn py-0 px-1 btn btn-dark">به روز رسانی</button>
-                </div>
-                <div class="table-box table-responsive">
-                    <table class="">
-                        <thead class="w-100 table table-hover table-bordered table-striped">
-                            <tr>
+                     <div class="action mb-3">
+                        <button class="btn py-0 px-0 btn btn-secondary">افزودن همه</button>
+                        <button onclick="addAll()" class="ntn py-0 px-1 btn btn-dark">نمایش همه</button>
+                        <button onclick="post('add')" type="button" data-bs-target="#personModal" data-bs-toggle="modal" class="btn py-0 px-0 btn btn-secondary">افزودن</button>
+                        <button onclick="update()"class="ntn py-0 px-1 btn btn-dark">به روز رسانی</button>
+                    </div>
+               <div class="table-box table-responsive">   <!-- this button for openning page -->
+                    <table class="w-100 table table-hover table-bordered table-striped">
+                        <thead>
+                            <tr>  
+                                <th>نام کاربری</th>
                                 <th>نام</th>
                                 <th>نام خانوادگی</th>
                                 <th>پست</th>
+                                <td>عملیات</td>
                             </tr>
-                        </thead> 
+                        </thead>
+                     
+                    
                         <tbody id="tbody">
-
-                            <td>مینا</th>
-                            <td>شایان</th>
-                            <td>افزودن مطالب جدید به پست</th>
-                            <td>
-                                <button onclick="post('edit')" class="btn py-0 px-1 btn btn-primary" data-bs-target="personModal" data-bs-toggle="modal" class="btn py-0 px-0 btn-success">ویرایش</button>
-                                <button class="btn py-0 px-1 btn-info" data-bs-target="personModal" data-bs-toggle="modal" class="btn py-0 px-0 btn-info">نمایش</button>
-                                <button class="btn py-0 px-1 btn-danger">حذف</button>
-                            </td>
+                            <tr>
+                                <td>minashayan</td>
+                                <td>مینا</td> 
+                                <td>شایان</td>
+                                <td>افزودن مطالب جدید به پست</td>
+                                <td>
+                                    <button onclick="post('edit')" class="btn py-0 px-1 btn btn-primary" data-bs-target="personModal" data-bs-toggle="modal" class="btn py-0 px-0 btn-success">ویرایش</button>
+                                    <button class="btn py-0 px-1 btn-info" data-bs-target="personModal" data-bs-toggle="modal" class="btn py-0 px-0 btn-info">نمایش</button>
+                                    <button class="btn py-0 px-1 btn-danger">حذف</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+    </div>
     </div>
    
     <script src="/asets/bootstrap/js/bootstrap.min.js"></script>
