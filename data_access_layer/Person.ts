@@ -4,7 +4,7 @@ import { Person } from "../view/person-model";
 export class PersonManage implements IPerson {
     
     //lsv : Person[] = new Array<Person>();
-    lsv : Person[] = [{name:"مینا", family:"رضایی",username:"minarezaeei"}]
+    lsv : Person[] = [{name:"مینا", family:"رضایی",username:"minarezaeei", post:"افزودن پست جدید به مطالب قبلی"}]
     add() {
         
     }
@@ -17,7 +17,7 @@ export class PersonManage implements IPerson {
 
     update() {
          if(this.lsv.length>0){
-            let tr : string;
+            let tr : string = "";
             this.lsv.forEach(item=>{
                 tr += "<tr><td>" + item.username + "</td>";
                 tr += "<td>" + item.family + "</td>";
