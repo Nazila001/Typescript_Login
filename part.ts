@@ -1,5 +1,5 @@
 import { PersonManage } from "./data_access_layer/Person"
-import { PersonValid } from "./valid/perosn-valid";
+import { PersonValid } from "./valid/person-valid";
 import { Person } from "./view/person-model";
 
 {   

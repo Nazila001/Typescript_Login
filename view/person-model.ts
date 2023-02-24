@@ -3,6 +3,7 @@ export class Person{
     name : string;
     family : string;
     pass? : string;
+    post : string;
 }
 
 export interface IPerson {
